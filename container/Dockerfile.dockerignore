@@ -1,0 +1,21 @@
+# Dependencies and build output (rebuilt inside Docker)
+node_modules
+.next
+
+# Version control
+.git
+.gitignore
+
+# Local env files (inject secrets at runtime, not build time)
+.env
+.env.local
+.env.*.local
+
+# Dev/editor noise
+.DS_Store
+*.log
+.vscode
+.idea
+
+# Container folder itself (no circular reference)
+container

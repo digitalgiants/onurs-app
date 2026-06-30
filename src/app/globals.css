@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
+/* Class-based dark mode for next-themes */
+@variant dark (&:where(.dark, .dark *));
+
+/* Brand color tokens */
+@theme {
+  --color-navy-950: #0d1a2e;
+  --color-navy-900: #1B2A4A;
+  --color-navy-800: #243568;
+  --color-navy-700: #2d4280;
+  --color-navy-600: #3b5ea6;
+  --color-navy-400: #6b8fd4;
+  --color-navy-200: #b8cef0;
+  --color-navy-100: #dce8fa;
+  --color-orange-600: #c4600e;
+  --color-orange-500: #E87722;
+  --color-orange-400: #f09040;
+  --color-orange-300: #f7b87a;
+}
+
+/* Semantic surface tokens — change with dark mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-page: #f4f6fb;
+  --bg-surface: #ffffff;
+  --bg-surface-raised: #f0f4fb;
+  --text-primary: #1a2340;
+  --text-secondary: #4b5a7a;
+  --text-muted: #7a8aaa;
+  --border: #d0daea;
+}
+
+.dark {
+  --bg-page: #0a0f1e;
+  --bg-surface: #111827;
+  --bg-surface-raised: #1a2236;
+  --text-primary: #e8edf8;
+  --text-secondary: #9aadcc;
+  --text-muted: #5a6a88;
+  --border: #1e2d4a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-page: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-surface-raised: var(--bg-surface-raised);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Smooth theme transitions */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }

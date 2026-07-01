@@ -40,7 +40,7 @@ export default function ContactPage() {
           {contactInfo.map(({ icon: Icon, label, value, href }) => (
             <div
               key={label}
-              className="rounded-2xl bg-surface border border-border p-5 flex items-start gap-4"
+              className="rounded-2xl bg-surface border border-border p-5 flex items-start gap-4 overflow-hidden"
             >
               <div className="shrink-0 h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
                 <Icon className="h-5 w-5 text-orange-500" />

@@ -45,10 +45,10 @@ export default function ContactPage() {
               <div className="shrink-0 h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
                 <Icon className="h-5 w-5 text-orange-500" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-1">{label}</p>
                 {href ? (
-                  <a href={href} className="text-sm font-medium text-text-primary hover:text-orange-500 transition-colors">
+                  <a href={href} className="text-sm font-medium text-text-primary hover:text-orange-500 transition-colors break-all">
                     {value}
                   </a>
                 ) : (
